@@ -1,0 +1,14 @@
+version: '3'
+services:
+  upload:
+    build: .
+    command: npm start
+    volumes:
+      - /usr/app/node_modules
+      - /mnt/storage_for_image/files:/usr/app/files
+      - /mnt/storage_for_image/public:/usr/app/public
+    ports:
+      - "3006:3000"
+    container_name: api-pdf
+    env_file:
+      - /etc/environment
