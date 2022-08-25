@@ -1,6 +1,6 @@
 {
-    "ENDPOINT_URI" : "https://backapi.doctormoneyapps.com/a/pdf/v1/document",
-    "REDIRECT_URI" : "https://backapi.doctormoneyapps.com/a/pdf/v1/document/verify",
+    "ENDPOINT_URI" : "https://cimsapps.com/a/pdf/v1/document",
+    "REDIRECT_URI" : "https://cimsapps.com/a/pdf/v1/document/verify",
     "SCOPES": [
         "https://www.googleapis.com/auth/drive",
         "https://www.googleapis.com/auth/drive.file",
