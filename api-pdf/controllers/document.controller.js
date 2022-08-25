@@ -279,12 +279,15 @@ exports.create = async (req, res, next) => {
                     }
                 })
             }
-            await docs.documents.batchUpdate({
-                documentId: documentId,
-                requestBody: {
-                    requests: requests
-                }
-            })
+            if(requests.length) {
+                await docs.documents.batchUpdate({
+                    documentId: documentId,
+                    requestBody: {
+                        requests: requests
+                    }
+                })
+            }
+            
 
             var keys = []
             for (var i = 0; i < content.length; i++) {
@@ -315,19 +318,21 @@ exports.create = async (req, res, next) => {
                 }
                 return new_item;
             })
-            await tableAppendRow({
-                auth: oAuth2Client,
-                documentId: documentId,
-                tableIndex: 0,
-                values: values
-            });
-            await tableDeleteRowsAndColumns({
-                auth: oAuth2Client,
-                documentId: documentId,
-                tableIndex: 0,
-                deleteRows: [1]
-            })
-           
+            if(values.length) {
+                await tableAppendRow({
+                    auth: oAuth2Client,
+                    documentId: documentId,
+                    tableIndex: 0,
+                    values: values
+                });
+                await tableDeleteRowsAndColumns({
+                    auth: oAuth2Client,
+                    documentId: documentId,
+                    tableIndex: 0,
+                    deleteRows: [1]
+                })    
+            }
+            
             res.status(201).json({
                 status: true,
                 data: {
