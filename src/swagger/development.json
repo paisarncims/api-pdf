@@ -1,0 +1,715 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "CIMS",
+        "version": "1.0",
+        "description": "API สำหรับดึงข้อมูล",
+        "summary": "Web Service",
+        "license": {
+            "name": "CIMS",
+            "url": "https://cimsapps.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "/service",
+            "description": "Domain"
+        }
+    ],
+    "paths": {
+        "/v1/employee/profile": {
+            "parameters": [],
+            "get": {
+                "summary": "ข้อมูลพนักงาน",
+                "tags": [],
+                "responses": {
+                    "200": {
+                        "description": "User Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "",
+                                    "type": "object",
+                                    "x-examples": {
+                                        "example-1": {
+                                            "status": true,
+                                            "message": "success",
+                                            "code": 200,
+                                            "data": {
+                                                "id": 21,
+                                                "employee_uuid": "fa715cc1-7bfa-422d-9d76-c6e3ce7e29dc",
+                                                "email": "wongsakorn.private@gmail.com",
+                                                "phone_number": "0804528614",
+                                                "password": "$2b$10$HT3lhhoIIKKvOGhqZHTOcufMG/2.MRRUmIGJ5HNN8mvh1IGO2L0ey",
+                                                "titlename": "นาย",
+                                                "firstname": "วงศกร",
+                                                "surname": "มะโนเรือน",
+                                                "titlename_eng": "Mr.",
+                                                "firstname_eng": "Wongsakorn",
+                                                "surname_eng": "Manoruean",
+                                                "photo_url": "undefined",
+                                                "refresh_token": "2d3c680f-8d30-4506-96d4-b35677e1ba7b",
+                                                "status_active": "New",
+                                                "role_id": "undefined",
+                                                "create_at": "2022-02-04T16:36:06.804Z",
+                                                "update_at": "2022-02-04T16:36:06.804Z",
+                                                "birthdate": "1996-08-26T00:00:00.000Z",
+                                                "card_id": "1521100052057",
+                                                "department_code": "0001",
+                                                "level_code": "0001",
+                                                "branch_code": "00000",
+                                                "position_code": "0001",
+                                                "uid_line": "-",
+                                                "uid_onesignal": "-",
+                                                "create_by": "CIMS-Admin",
+                                                "employee_id": "CIMS6500021",
+                                                "otp": "383658",
+                                                "address1": null,
+                                                "address2": null,
+                                                "address3": null,
+                                                "address4": null,
+                                                "address5": null,
+                                                "sip_id": null,
+                                                "employee_active": 1,
+                                                "branch_short_name": "HO",
+                                                "branch_name": "สำนักงานใหญ่",
+                                                "branch_province": "พิษณุโลก",
+                                                "branch_name_eng": null,
+                                                "branch_province_eng": "Phitsanulok",
+                                                "department_name": "ฝ่ายเทคโนโลยีสารสนเทศ",
+                                                "department_name_eng": null,
+                                                "department_short_name": "IT",
+                                                "position_name": "ทีมพัฒนาระบบ",
+                                                "position_name_eng": "Developer",
+                                                "level_name": "ระดับ 1",
+                                                "level_name_eng": "Level 1"
+                                            }
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "required": [
+                                                "id",
+                                                "employee_uuid",
+                                                "email",
+                                                "phone_number",
+                                                "password",
+                                                "titlename",
+                                                "firstname",
+                                                "surname",
+                                                "create_at",
+                                                "update_at",
+                                                "branch_code",
+                                                "employee_id"
+                                            ],
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number"
+                                                },
+                                                "employee_uuid": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "phone_number": {
+                                                    "type": "string"
+                                                },
+                                                "password": {
+                                                    "type": "string"
+                                                },
+                                                "titlename": {
+                                                    "type": "string"
+                                                },
+                                                "firstname": {
+                                                    "type": "string"
+                                                },
+                                                "surname": {
+                                                    "type": "string"
+                                                },
+                                                "titlename_eng": {
+                                                    "type": "string"
+                                                },
+                                                "firstname_eng": {
+                                                    "type": "string"
+                                                },
+                                                "surname_eng": {
+                                                    "type": "string"
+                                                },
+                                                "photo_url": {
+                                                    "type": "string"
+                                                },
+                                                "refresh_token": {
+                                                    "type": "string"
+                                                },
+                                                "status_active": {
+                                                    "type": "string"
+                                                },
+                                                "role_id": {
+                                                    "type": "string"
+                                                },
+                                                "create_at": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                },
+                                                "update_at": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                },
+                                                "birthdate": {
+                                                    "type": "string"
+                                                },
+                                                "card_id": {
+                                                    "type": "string"
+                                                },
+                                                "department_code": {
+                                                    "type": "string"
+                                                },
+                                                "level_code": {
+                                                    "type": "string"
+                                                },
+                                                "branch_code": {
+                                                    "type": "string"
+                                                },
+                                                "position_code": {
+                                                    "type": "string"
+                                                },
+                                                "uid_line": {
+                                                    "type": "string"
+                                                },
+                                                "uid_onesignal": {
+                                                    "type": "string"
+                                                },
+                                                "create_by": {
+                                                    "type": "string"
+                                                },
+                                                "employee_id": {
+                                                    "type": "string"
+                                                },
+                                                "otp": {
+                                                    "type": "string"
+                                                },
+                                                "address1": {},
+                                                "address2": {},
+                                                "address3": {},
+                                                "address4": {},
+                                                "address5": {},
+                                                "sip_id": {},
+                                                "employee_active": {
+                                                    "type": [
+                                                        "boolean",
+                                                        "number"
+                                                    ]
+                                                },
+                                                "branch_short_name": {
+                                                    "type": "string"
+                                                },
+                                                "branch_name": {
+                                                    "type": "string"
+                                                },
+                                                "branch_province": {
+                                                    "type": "string"
+                                                },
+                                                "branch_name_eng": {},
+                                                "branch_province_eng": {
+                                                    "type": "string"
+                                                },
+                                                "department_name": {
+                                                    "type": "string"
+                                                },
+                                                "department_name_eng": {},
+                                                "department_short_name": {
+                                                    "type": "string"
+                                                },
+                                                "position_name": {
+                                                    "type": "string"
+                                                },
+                                                "position_name_eng": {
+                                                    "type": "string"
+                                                },
+                                                "level_name": {
+                                                    "type": "string"
+                                                },
+                                                "level_name_eng": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "status",
+                                        "code",
+                                        "data"
+                                    ]
+                                },
+                                "examples": {
+                                    "ตัวอย่าง": {
+                                        "value": {
+                                            "status": true,
+                                            "message": "string",
+                                            "code": 0,
+                                            "data": {
+                                                "id": 0,
+                                                "employee_uuid": "string",
+                                                "email": "string",
+                                                "phone_number": "string",
+                                                "password": "string",
+                                                "titlename": "string",
+                                                "firstname": "string",
+                                                "surname": "string",
+                                                "titlename_eng": "string",
+                                                "firstname_eng": "string",
+                                                "surname_eng": "string",
+                                                "photo_url": "string",
+                                                "refresh_token": "string",
+                                                "status_active": "string",
+                                                "role_id": "string",
+                                                "create_at": "2019-08-24T14:15:22Z",
+                                                "update_at": "2019-08-24T14:15:22Z",
+                                                "birthdate": "string",
+                                                "card_id": "string",
+                                                "department_code": "string",
+                                                "level_code": "string",
+                                                "branch_code": "string",
+                                                "position_code": "string",
+                                                "uid_line": "string",
+                                                "uid_onesignal": "string",
+                                                "create_by": "string",
+                                                "employee_id": "string",
+                                                "otp": "string",
+                                                "address1": null,
+                                                "address2": null,
+                                                "address3": null,
+                                                "address4": null,
+                                                "address5": null,
+                                                "sip_id": null,
+                                                "employee_active": true,
+                                                "branch_short_name": "string",
+                                                "branch_name": "string",
+                                                "branch_province": "string",
+                                                "branch_name_eng": null,
+                                                "branch_province_eng": "string",
+                                                "department_name": "string",
+                                                "department_name_eng": null,
+                                                "department_short_name": "string",
+                                                "position_name": "string",
+                                                "position_name_eng": "string",
+                                                "level_name": "string",
+                                                "level_name_eng": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "",
+                                    "type": "object",
+                                    "x-examples": {
+                                        "example-1": {
+                                            "status": false,
+                                            "message": "ไม่พบบัญชีผู้ใช้",
+                                            "code": 404,
+                                            "data": null
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "data": {
+                                            "type": "null"
+                                        }
+                                    },
+                                    "required": [
+                                        "status",
+                                        "message"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "employee",
+                "description": "ข้อมูลโปรไฟล์พนักงาน",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "Bearer {TOKEN}"
+                    }
+                ]
+            }
+        },
+        "/v1/employee/create": {
+            "post": {
+                "summary": "Create Employee",
+                "operationId": "post-user",
+                "responses": {
+                    "200": {
+                        "description": "User Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                },
+                                "examples": {
+                                    "New User Bob Fellow": {
+                                        "value": {
+                                            "id": 12,
+                                            "firstName": "Bob",
+                                            "lastName": "Fellow",
+                                            "email": "bob.fellow@gmail.com",
+                                            "dateOfBirth": "1996-08-24",
+                                            "emailVerified": false,
+                                            "createDate": "2020-11-18"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Missing Required Information"
+                    },
+                    "409": {
+                        "description": "Email Already Taken"
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string"
+                                    },
+                                    "lastName": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "dateOfBirth": {
+                                        "type": "string",
+                                        "format": "date"
+                                    }
+                                },
+                                "required": [
+                                    "firstName",
+                                    "lastName",
+                                    "email",
+                                    "dateOfBirth"
+                                ]
+                            },
+                            "examples": {
+                                "Create User Bob Fellow": {
+                                    "value": {
+                                        "firstName": "Bob",
+                                        "lastName": "Fellow",
+                                        "email": "bob.fellow@gmail.com",
+                                        "dateOfBirth": "1996-08-24"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Post the necessary fields for the API to create a new user."
+                },
+                "description": "Create a new user."
+            },
+            "parameters": []
+        }
+    },
+    "components": {
+        "schemas": {
+            "cims_employee_account": {
+                "description": "",
+                "type": "object",
+                "x-examples": {
+                    "example-1": {
+                        "id": 23,
+                        "employee_uuid": "7e0d0e76-efb0-48ca-8cff-dbccfb295bc7",
+                        "email": "CIMS001@gmail.com",
+                        "phone_number": "0851555115",
+                        "password": "$2b$10$IyoJ3XTpPU03Kwh/Hi/GZuOVJBu5PuPxxUHD9UxbaruY6/yBGToPS",
+                        "titlename": "นาย",
+                        "firstname": "ปริญญา",
+                        "surname": "บุญชัย",
+                        "titlename_eng": "Mr.",
+                        "firstname_eng": "Parinya",
+                        "surname_eng": "Boonchai",
+                        "photo_url": "undefined",
+                        "refresh_token": "94145b17-bd09-4454-a34a-58b275566c73",
+                        "status_active": "New",
+                        "role_id": "undefined",
+                        "create_at": "2022-02-08 23:01:45.729025",
+                        "update_at": "2022-02-08 23:01:45.729025",
+                        "birthdate": "1991-01-01",
+                        "card_id": "1234567890123",
+                        "department_code": "0001",
+                        "level_code": "0001",
+                        "branch_code": "00000",
+                        "position_code": "0001",
+                        "uid_line": "-",
+                        "uid_onesignal": "-",
+                        "create_by": "CIMS-Admin",
+                        "employee_id": "CIMS6500023",
+                        "otp": "924305",
+                        "address1": null,
+                        "address2": null,
+                        "address3": null,
+                        "address4": null,
+                        "address5": null,
+                        "sip_id": null,
+                        "employee_active": 1
+                    }
+                },
+                "examples": [
+                    {
+                        "id": 0,
+                        "employee_uuid": "string",
+                        "email": "user@example.com",
+                        "phone_number": "string",
+                        "password": "pa$$word",
+                        "titlename": "string",
+                        "firstname": "string",
+                        "surname": "string",
+                        "titlename_eng": "string",
+                        "firstname_eng": "string",
+                        "surname_eng": "string",
+                        "photo_url": "string",
+                        "refresh_token": "string",
+                        "status_active": "string",
+                        "role_id": "string",
+                        "create_at": "string",
+                        "update_at": "string",
+                        "birthdate": "string",
+                        "card_id": "string",
+                        "department_code": "string",
+                        "level_code": "string",
+                        "branch_code": "string",
+                        "position_code": "string",
+                        "uid_line": "string",
+                        "uid_onesignal": "string",
+                        "create_by": "string",
+                        "employee_id": "string",
+                        "otp": "string",
+                        "address1": "string",
+                        "address2": "string",
+                        "address3": "string",
+                        "address4": "string",
+                        "address5": "string",
+                        "sip_id": "string",
+                        "employee_active": 0
+                    }
+                ],
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "employee_uuid": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "email": {
+                        "type": "string",
+                        "minLength": 1,
+                        "format": "email"
+                    },
+                    "phone_number": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "password": {
+                        "type": "string",
+                        "minLength": 1,
+                        "format": "password"
+                    },
+                    "titlename": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "firstname": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "surname": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "titlename_eng": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "firstname_eng": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "surname_eng": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "photo_url": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "refresh_token": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "status_active": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "role_id": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "create_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "update_at": {
+                        "type": "string",
+                        "minLength": 1,
+                        "format": "date-time"
+                    },
+                    "birthdate": {
+                        "type": "string",
+                        "minLength": 1,
+                        "format": "date-time"
+                    },
+                    "card_id": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "department_code": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "level_code": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "branch_code": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "position_code": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "uid_line": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "uid_onesignal": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "create_by": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "employee_id": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "otp": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "address1": {
+                        "type": "string"
+                    },
+                    "address2": {
+                        "type": "string"
+                    },
+                    "address3": {
+                        "type": "string"
+                    },
+                    "address4": {
+                        "type": "string"
+                    },
+                    "address5": {
+                        "type": "string"
+                    },
+                    "sip_id": {
+                        "type": "string"
+                    },
+                    "employee_active": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "employee_uuid",
+                    "email",
+                    "phone_number",
+                    "password",
+                    "titlename",
+                    "firstname",
+                    "surname",
+                    "titlename_eng",
+                    "firstname_eng",
+                    "surname_eng",
+                    "photo_url",
+                    "refresh_token",
+                    "status_active",
+                    "role_id",
+                    "create_at",
+                    "update_at",
+                    "birthdate",
+                    "card_id",
+                    "department_code",
+                    "level_code",
+                    "branch_code",
+                    "position_code",
+                    "uid_line",
+                    "uid_onesignal",
+                    "create_by",
+                    "employee_id",
+                    "otp",
+                    "employee_active"
+                ],
+                "title": "cims_employee_account"
+            }
+        },
+        "securitySchemes": {
+            "Authorization": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "API Key": []
+        }
+    ]
+}
