@@ -10,7 +10,7 @@ services:
     ports:
       - "3006:3000"
     container_name: api-pdf
-    env_file:
+    environment:
       MONGODB_Username: cimsdb
       MONGODB_Password: sk176yA829ZdP54E
       MONGODB_Host: cims-mongodb-5ae8e566.mongo.ondigitalocean.com
