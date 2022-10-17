@@ -373,8 +373,6 @@ exports.view = async (req, res, next) => {
                 urlConfig.REDIRECT_URI + '/' + config_id + '/token'
             );
 
-            console.log('tokens : ', pdfTokenSchema.tokens);
-            console.log('documentId : ', documentId);
             
             oAuth2Client.setCredentials(pdfTokenSchema.tokens);
             const drive = google.drive({ version: 'v2', auth: oAuth2Client });
