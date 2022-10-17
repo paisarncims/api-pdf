@@ -365,6 +365,7 @@ exports.view = async (req, res, next) => {
         var pdfConfig = await PdfConfigSchema.findOne({ script_class: config_id, script_status: true });
         var pdfTokenSchema = await PdfTokenSchema.findOne({ config_id });
 
+        console.log('pdfConfig : ', pdfConfig);
         if (pdfTokenSchema) {
             const oAuth2Client = new google.auth.OAuth2(
                 pdfConfig.client_id,
