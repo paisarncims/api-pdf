@@ -365,7 +365,7 @@ exports.view = async (req, res, next) => {
         var config_id = ds[1];
         console.log('documentId : ', documentId);
         console.log('config_id : ', config_id);
-        var pdfConfig = await PdfConfigSchema.findOne({ script_class: 'MS2210171109232330', script_status: true });
+        var pdfConfig = await PdfConfigSchema.findOne({ script_class: config_id, script_status: true });
         var pdfTokenSchema = await PdfTokenSchema.findOne({ config_id });
 
         console.log('pdfConfig : ', pdfConfig);
@@ -403,6 +403,7 @@ exports.view = async (req, res, next) => {
             })
         }
     } catch (error) {
+        console.log('error : ', error);
         return res.status(500).json({
             status: false,
             message: 'พบข้อผิดพลาดบางประการ',
