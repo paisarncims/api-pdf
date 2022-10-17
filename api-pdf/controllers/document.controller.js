@@ -366,12 +366,21 @@ exports.view = async (req, res, next) => {
         var pdfTokenSchema = await PdfTokenSchema.findOne({ config_id });
 
         console.log('pdfConfig : ', pdfConfig);
+        console.log('pdfTokenSchema : ', pdfTokenSchema);
         if (pdfTokenSchema) {
+            console.log(pdfConfig.client_id,); 
+            console.log(pdfConfig.client_secret,); 
+            console.log(urlConfig.REDIRECT_URI + '/' + config_id + '/token'); 
+       
             const oAuth2Client = new google.auth.OAuth2(
                 pdfConfig.client_id,
                 pdfConfig.client_secret,
                 urlConfig.REDIRECT_URI + '/' + config_id + '/token'
             );
+
+            console.log('tokens : ', pdfTokenSchema.tokens);
+            console.log('documentId : ', documentId);
+            
             oAuth2Client.setCredentials(pdfTokenSchema.tokens);
             const drive = google.drive({ version: 'v2', auth: oAuth2Client });
             var result = await drive.files.export({
