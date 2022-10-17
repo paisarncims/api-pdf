@@ -359,9 +359,12 @@ exports.view = async (req, res, next) => {
     try {
         var { fileid } = req.params;
         var d = Buffer.from(fileid, 'base64').toString('ascii');
+        console.log(d);
         var ds = d.split(':');
         var documentId = ds[0];
         var config_id = ds[1];
+        console.log('documentId : ', documentId);
+        console.log('config_id : ', config_id);
         var pdfConfig = await PdfConfigSchema.findOne({ script_class: config_id, script_status: true });
         var pdfTokenSchema = await PdfTokenSchema.findOne({ config_id });
 
